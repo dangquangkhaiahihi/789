@@ -1,0 +1,8 @@
+main.py
+DrissionPage.egg-info/PKG-INFO
+DrissionPage.egg-info/SOURCES.txt
+DrissionPage.egg-info/dependency_links.txt
+DrissionPage.egg-info/entry_points.txt
+DrissionPage.egg-info/not-zip-safe
+DrissionPage.egg-info/requires.txt
+DrissionPage.egg-info/top_level.txt
