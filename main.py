@@ -172,7 +172,7 @@ def run_web (index, file_captcha_name):
     option.set_user("Profile" + str(index))
     page = ChromiumPage(option)
     # Control the browser to visit Baidu
-    page.get(config_data.domain)
+    page.get(config_data['domain'])
     tab1 = page.get_tab(page.latest_tab)
     # Locate the input box and enter the keyword
     page.ele('xpath:/html/body/div[2]/div[1]/div[1]/a').click()
@@ -180,13 +180,13 @@ def run_web (index, file_captcha_name):
     # Vào tab mới vừa bật
     page.wait.new_tab()
     tab1.close()
-    tab2 = page.get_tab(page.latest_tab)
-    tab2.ele('#btn-5').click()
+    # tab2 = page.get_tab(page.latest_tab)
+    # tab2.ele('#btn-5').click()
 
     # Tiếp tục đến tab tiếp theo
-    page.wait.new_tab()
+    # page.wait.new_tab()
     tab3 = page.get_tab(page.latest_tab)
-    tab2.close()
+    # tab2.close()
 
     # Bắt đầu thao tác trên trang chính của 789
     original_url = tab3.url # Origin URL
@@ -319,14 +319,14 @@ def main():
     p1 = threading.Thread(target=run_web, args=(1, 'captcha1.png'))
     p1.start()
     time.sleep(20)
-    # p2 = threading.Thread(target=run_web, args=(2, 'captcha2.png'))
-    # p2.start()
-    # time.sleep(20)
-    # p3 = threading.Thread(target=run_web, args=(3, 'captcha3.png'))
-    # p3.start()
-    # time.sleep(20)
-    # p4 = threading.Thread(target=run_web, args=(4, 'captcha4.png'))
-    # p4.start()
+    p2 = threading.Thread(target=run_web, args=(2, 'captcha2.png'))
+    p2.start()
+    time.sleep(20)
+    p3 = threading.Thread(target=run_web, args=(3, 'captcha3.png'))
+    p3.start()
+    time.sleep(20)
+    p4 = threading.Thread(target=run_web, args=(4, 'captcha4.png'))
+    p4.start()
 
 if __name__ == "__main__":
      _ = main()
