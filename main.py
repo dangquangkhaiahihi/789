@@ -172,7 +172,7 @@ def run_web (index, file_captcha_name):
     option.set_user("Profile" + str(index))
     page = ChromiumPage(option)
     # Control the browser to visit Baidu
-    page.get('https://www.789bet.com')
+    page.get(config_data.domain)
     tab1 = page.get_tab(page.latest_tab)
     # Locate the input box and enter the keyword
     page.ele('xpath:/html/body/div[2]/div[1]/div[1]/a').click()
@@ -319,14 +319,14 @@ def main():
     p1 = threading.Thread(target=run_web, args=(1, 'captcha1.png'))
     p1.start()
     time.sleep(20)
-    p2 = threading.Thread(target=run_web, args=(2, 'captcha2.png'))
-    p2.start()
-    time.sleep(20)
-    p3 = threading.Thread(target=run_web, args=(3, 'captcha3.png'))
-    p3.start()
-    time.sleep(20)
-    p4 = threading.Thread(target=run_web, args=(4, 'captcha4.png'))
-    p4.start()
+    # p2 = threading.Thread(target=run_web, args=(2, 'captcha2.png'))
+    # p2.start()
+    # time.sleep(20)
+    # p3 = threading.Thread(target=run_web, args=(3, 'captcha3.png'))
+    # p3.start()
+    # time.sleep(20)
+    # p4 = threading.Thread(target=run_web, args=(4, 'captcha4.png'))
+    # p4.start()
 
 if __name__ == "__main__":
      _ = main()
